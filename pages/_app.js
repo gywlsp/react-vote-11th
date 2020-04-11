@@ -2,13 +2,13 @@ import React from 'react';
 import App from 'next/app';
 import Head from 'next/head';
 
-class PickkApp extends App {
+class VoteApp extends App {
   render() {
     const { Component, pageProps } = this.props;
     return (
       <>
         <Head>
-          <title>리액트 프로필</title>
+          <title>리액트 VOTE</title>
         </Head>
         <Component {...pageProps} />
         <style jsx global>{`
@@ -52,4 +52,4 @@ class PickkApp extends App {
   }
 }
 
-export default PickkApp;
+export default VoteApp;

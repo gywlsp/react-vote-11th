@@ -1,7 +1,7 @@
 import React from 'react';
-
-import ProfileCard from '../components/profile-card';
 import styled from 'styled-components';
+
+import ProfileCard from '../src/components/profile-card';
 
 export default function Home() {
   return (

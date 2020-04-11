@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 export default function ProfileCard() {
-  return <Wrapper>안녕 나는 프로필 카드</Wrapper>;
+  return <Wrapper>안녕 나는 프로필 카드캡터체리</Wrapper>;
 }
 
 const Wrapper = styled.div`

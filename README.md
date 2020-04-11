@@ -1,30 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
+# react-vote-11th
 
-## Getting Started
+## 실행 방법
 
-First, run the development server:
-
-```bash
+```
+npm install
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- npm install : 필요한 모든 패키지를 설치합니다. 처음 1번만 실행하면 됩니다.
+- npm run dev : react(next) 웹서버를 localhost:3000에서 실행합니다.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## 미션 설명
 
-## Learn More
+[미션 설명](./docs/mission-description/README.md)
 
-To learn more about Next.js, take a look at the following resources:
+## 미션 제출 방법
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/zeit/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on ZEIT Now
-
-The easiest way to deploy your Next.js app is to use the [ZEIT Now Platform](https://zeit.co/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[미션 제출 방법](https://github.com/CEOS-Developers/react-todo-11th/tree/master/docs/how-to-submit)
