@@ -1,18 +1,19 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import ProfileCard from '../src/components/profile-card';
+import LoginForm from "../src/components/login-form";
 
 export default function Home() {
   return (
     <Wrapper>
-      나는 홈이야
-      <ProfileCard />
+      리액트 투-표
+      <LoginForm />
     </Wrapper>
   );
 }
 
 const Wrapper = styled.div`
-  background-color: blue;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 10rem 40rem;
+  background-color: Azure;
 `;
