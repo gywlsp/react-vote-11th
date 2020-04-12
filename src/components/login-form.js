@@ -9,21 +9,26 @@ export default function LoginForm({ setIsLoggedIn }) {
     setLoginForm({ ...loginForm, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = () => {
+  const validateForm = () => {
     const { email, password } = loginForm;
     if (email === "" || password === "") {
       alert("모든 항목을 입력해주세요!");
-      return;
+      return false;
     }
+    return true;
+  };
+
+  const handleSubmit = () => {
+    if (validateForm() === false) return;
     axios
       .post(process.env.API_HOST + "/auth/signin/", loginForm)
-      .then(function (response) {
-        console.log(response);
+      .then((res) => {
+        console.log(res);
         alert("로그인 성공!");
         setIsLoggedIn(true);
       })
-      .catch(function (error) {
-        console.log(error);
+      .catch((err) => {
+        console.log(err);
         alert("로그인 실패");
       });
   };
@@ -34,13 +39,19 @@ export default function LoginForm({ setIsLoggedIn }) {
       <FormWrapper>
         <Row>
           <Label>EMAIL</Label>
-          <Input type="text" name="email" onChange={handleLoginFormChange} />
+          <Input
+            type="text"
+            name="email"
+            value={loginForm.email}
+            onChange={handleLoginFormChange}
+          />
         </Row>
         <Row>
           <Label>PASSWORD</Label>
           <Input
             type="password"
             name="password"
+            value={loginForm.password}
             onChange={handleLoginFormChange}
           />
         </Row>
@@ -88,7 +99,6 @@ const Input = styled.input`
 
 const SubmitButton = styled.button`
   display: block;
-  width: fit-content;
   margin-left: auto;
   padding: 0.5rem 1rem;
   border: none;
