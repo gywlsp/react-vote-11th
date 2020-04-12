@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "node server",
     "build": "next build",
-    "start": "next start"
+    "start": "node server"
   },
   "dependencies": {
     "compression": "^1.7.4",
