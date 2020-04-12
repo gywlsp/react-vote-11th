@@ -6,6 +6,9 @@ export default function LoginForm() {
 }
 
 const Wrapper = styled.div`
-  background-color: red;
+  width: 100%;
+  min-height: 30rem;
+  background-color: white;
   font-size: 18px;
+  padding: 3rem 4rem;
 `;

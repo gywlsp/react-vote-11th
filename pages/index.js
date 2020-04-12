@@ -13,6 +13,7 @@ export default function Home() {
 }
 
 const Wrapper = styled.div`
-  background-color: blue;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 10rem 40rem;
+  background-color: Azure;
 `;
