@@ -1,4 +1,4 @@
-# react-todo
+# react-vote
 
 ## 목차
 
@@ -9,48 +9,91 @@
 
 ## 서론
 
-안녕하세요. CEOS 11기 프론트엔드 개발 운영진 이수완입니다😉
+안녕하세요 부회장 최수민입니다.
 
-2주차 미션은 
-리액트 docs 주요 개념 5-12 https://ko.reactjs.org/docs/state-and-lifecycle.html   
-리액트 docs Hook 1-3 https://ko.reactjs.org/docs/hooks-intro.html   
-React memo : https://ui.toast.com/weekly-pick/ko_20190731/   
-를 참고하여 Todo를 만드는 것입니다!   
+벌써 프론트스터디 3주차네요! 이번주부터는 서버와의 통신을 시작할거에요
+async/await, hooks, axios등 생소한 개념이 많으니 아래 문서들을 열심히, 꼼꼼히 읽어보시면 좋을 것 같아요
 
-1주차에서 말씀드린 것처럼  
-미션 제출은 본인이 완성했다고 생각하는 언제라도 제출할 수 있습니다.   
-(단, 제출한 시점 이후에 수정은 불가하니 착오 없기를 바랍니다🤭)   
+1. [자바스크립트 async와 await](https://joshua1988.github.io/web-development/javascript/js-async-await/#async--await%EB%8A%94-%EB%AD%94%EA%B0%80%EC%9A%94)
+2. [초보를 위한 동기/비동기 개념, async await 사용법](https://codingbroker.tistory.com/28)
+3. [리액트의 Hooks 완벽 정복하기 : useEffect](https://velog.io/@velopert/react-hooks#2-useeffect)
+4. [axios 사용해보기](https://velog.io/@sss5793/axios-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0-uuk5elxk88)
+5. [React 공식 문서 : 조건부 렌더링](https://reactjs-kr.firebaseapp.com/docs/conditional-rendering.html)
 
-2주차 미션 마감일시는 2020년 4월 10일(금)까지입니다‼️
+언제나처럼 미션 제출은 본인이 완성했다고 생각하는 언제라도 제출할 수 있습니다.
 
-2주차 미션하면서 생긴 궁금한 점 역시 슬랙의 qna채널에 올려주시면 좋을거 같습니다!!🌼
+단, 제출한 시점 이후에 수정은 불가하니 착오 없기를 바랍니다.
+
+3주차 미션 마감일시는 2020년 4월 17일(금)까지입니다‼️
+
+매주 빡센 일정 잘 따라와주셔서 정말 감사합니다 🥺
+
+학기말에 활동 끝나고나면 꼭! 어디가서 리액트 좀 한다😎할 수 있는 실력되실 수 있도록 저희 운영진도 더 열심히 준비할게요 :-)
+
+궁금한 점 언제든지 슬랙 qna 채널에 올려주세요~~ 같이 고민해봐요!
+
+Happy hacking 🧑🏻‍💻👩🏻‍💻
+
+## API 도큐먼트
+
+[Practice-server API Documentation](https://www.notion.so/sumins/Practice-server-API-Documentation-53ab36dfe92a40b984362415c244ceb9)
 
 ## 프로그램 실행 결과
 
- https://react-todo-11th.swan990605.now.sh 
+https://react-vote-11th.gywls517.now.sh/
+
+## 미션 목표
+
+1. axios module의 사용법을 익힌다.
+2. HTTP 요청 메서드의 종류와 용도를 이해한다.
+3. .env파일이 필요한 이유를 배우고, 활용해본다.
+4. useEffect의 사용법을 익힌다.
+5. 조건부 렌더링을 사용해본다.
+6. 필수적인 요소만 전달할 수 있는 컴포넌트 구조, 데이터 플로우에 대해서 고민해본다.
 
 ## 프로그래밍 요구사항
 
 필수 사항
 
-- todo 입력 칸에서 날짜와 내용을 입력하고 등록 버튼을 누르면 오른쪽에 todo가 쌓인다.   
-- 형식에 맞지 않는 경우와 입력이 된 경우 alert를 띄워주세요!   
-입력이 하나라도 비어있을 때 : '모든 항목을 입력해주세요!'   
-입력 다 돼있는데 날짜 형식이 아닐때 :'날짜를 올바른 형식으로 입력해주세요!'   
-입력이 잘 되었을 때 : '입력되었습니다!'   
-- 각 todo의 완료 버튼을 누르면 해당 todo가 지워진다.      
+1. 전체
+
+- 함수형 컴포넌트로 구현한다.
+- styled-component를 사용한다.
+- 예제와 동일하지 않아도 좋으니, 개발자 도구로 css 값을 확인하지 않고 스타일링을 직접 해본다.
+- React.memo를 적용한다.
+- [자바스크립트 네이밍 컨벤션](https://velog.io/@cada/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%8A%A4%ED%83%80%EC%9D%BC-%EA%B0%80%EC%9D%B4%EB%93%9C-%EB%84%A4%EC%9D%B4%EB%B0%8D-%EC%BB%A8%EB%B2%A4%EC%85%98-%ED%8E%B8)을 준수하며 개발한다.
+- 기능 단위별로 함수를 분리한다.
+- 컴포넌트의 역할을 잘 나타낼 수 있는 적절한 네이밍을 사용한다.
+
+2. 로그인
+
+- 이메일과 비밀번호를 입력해 로그인할 수 있다.
+- 빈 문자열을 입력한 경우 모든 항목을 입력해 달라는 alert 메세지를 띄운다.
+- 서버에서 올바른 응답이 온 경우 로그인 성공 alert 메시지를 띄우고, 투표리스트로 전환한다.
+- 에러가 catch된 경우 로그인 실패 alert를 띄우고, 로그인 폼을 초기화한다.
+- 로그인에 성공하면 로그인 폼을 숨기고 투표 창을 띄운다.
+
+2. 투표
+
+- 투표리스트 마운트시 서버로부터 후보자 리스트를 받아서 띄운다.
+- 후보자 리스트는 득표수 내림차순으로 정렬한다. (공동 순위는 없음)
+- 각 후보자들에 대해서 투표 버튼을 눌러 투표할 수 있다.
+- 투표에 성공하면 해당 사람에게 투표했다는 alert 메세지를 띄우고, 바뀐 투표 결과가 화면에 업데이트 되도록 한다.
+- 투표에 실패하면 투표 실패했다는 alert 메세지를 띄운다.
 
 선택 사항
 
-- 날짜는 20200405와 같은 숫자 8자리 형식으로만 입력되게 한다. (8자리 이상일 경우에는 작성할 수 없다)   
-- 오른쪽에 쌓이는 todo를 날짜가 빠른 순으로 정렬되게 한다.
-- React-memo를 이용해서 최적화한다.
+1. 로그인
+
+- 서버는 로그인 요청시 db에 이메일이 존재하지 않으면 에러코드 404를, 비밀번호가 불일치하면 에러코드 422를 반환한다. 에러 catch시에 에러코드를 확인해 case별로 다르게 대처하자.
+- 이메일이 존재하지 않으면 `이메일이 존재하지 않습니다.` alert를 띄우고, 로그인 폼을 초기화한다.
+- 비밀번호가 불일치하면 `비밀번호가 틀렸습니다.` alert를 띄우고, 비밀번호만 초기화한다.
+- 힌트1 : [catch문에서 에러 리스폰스에 접근하는 방법](https://github.com/axios/axios/issues/960#issuecomment-309287911)
+- 힌트2 : 반환된 에러 리스폰스를 `console.log`로 확인해보세요!
+
 
 ## 미션 저장소 및 진행 요구사항
 
 - 미션은 이 저장소를 fork/clone해 시작한다.
 - git의 commit 단위는 앞 단계에서 README.md 파일에 정리한 Component 단위로 추가한다.
-- 고민거리에 제시된 주제들에 대한 답변도 README.md 파일에 정리해 추가한다.
-- [스터디 과제제출](../how-to-submit/README.md) 문서를 참고해 미션을 제출한다.
-
-이번에 Todo리스트 만들면서 필요한 기능들을 구현할 때 어떤 메서드를 쓸까..🧐 이런 고민들을 하면서 구글링과 더 친해지는 기회를 가지는 것도 좋을 거 같아요!
+- [스터디 과제제출](https://github.com/CEOS-Developers/react-todo-11th/tree/master/docs/how-to-submit) 문서를 참고해 미션을 제출한다.
