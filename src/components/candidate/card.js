@@ -2,13 +2,7 @@ import React from "react";
 import axios from "axios";
 import styled from "styled-components";
 
-export default function CandidateCard({
-  rank,
-  _id: id,
-  name,
-  voteCount,
-  onComplete,
-}) {
+function CandidateCard({ rank, _id: id, name, voteCount, onComplete }) {
   const handleSubmit = (id, name) => () => {
     axios
       .put(process.env.API_HOST + `/candidates/${id}/vote/`)
@@ -32,6 +26,8 @@ export default function CandidateCard({
     </Wrapper>
   );
 }
+
+export default React.memo(CandidateCard);
 
 const Wrapper = styled.div`
   display: flex;
