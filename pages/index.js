@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 import LoginForm from "../src/components/login-form";
-import VoteForm from "../src/components/vote-form";
+import CandidateList from "../src/components/candidate/list";
 
 export default function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -11,7 +11,7 @@ export default function Home() {
     <Wrapper>
       <Title>리액트 투-표</Title>
       {!isLoggedIn && <LoginForm {...{ setIsLoggedIn }} />}
-      {isLoggedIn && <VoteForm />}
+      {isLoggedIn && <CandidateList />}
     </Wrapper>
   );
 }
