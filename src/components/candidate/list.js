@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
 
-export default function VoteForm() {
+import CandidateCard from "./card";
+
+export default function CandidateList() {
   const [candidates, setCandidates] = useState(null);
 
   useEffect(() => {
@@ -20,19 +22,6 @@ export default function VoteForm() {
     setCandidates(data);
   };
 
-  const handleSubmit = (id, name) => {
-    axios
-      .put(process.env.API_HOST + `/candidates/${id}/vote/`)
-      .then((res) => {
-        console.log(res);
-        alert(name + "님에게 투표 완료!");
-        getCandidates();
-      })
-      .catch((err) => {
-        console.log(err);
-        alert("투표 실패!");
-      });
-  };
   return (
     <Wrapper>
       <Title>
@@ -44,15 +33,15 @@ export default function VoteForm() {
           candidates
             .sort((a, b) => b.voteCount - a.voteCount)
             .map((candidate, index) => {
-              const { _id, name, voteCount } = candidate;
               return (
-                <Row>
-                  <Ranking>{index + 1}위 :</Ranking>
-                  <Name>
-                    {name} [{voteCount}표]
-                  </Name>
-                  <Button onClick={() => handleSubmit(_id, name)}>투표</Button>
-                </Row>
+                <CandidateCard
+                  key={candidate._id}
+                  {...{
+                    rank: index + 1,
+                    ...candidate,
+                    onComplete: getCandidates,
+                  }}
+                />
               );
             })}
       </ContentWrapper>
@@ -85,29 +74,4 @@ const ContentWrapper = styled.div`
   width: 100%;
   padding: 5rem 10rem;
   border: 1px solid black;
-`;
-
-const Row = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`;
-
-const Ranking = styled.strong`
-  font-size: 2.5rem;
-  margin: 0rem 4rem 1rem 0rem;
-`;
-
-const Name = styled.p`
-  font-size: 2.5rem;
-  margin: 0rem auto 1rem 0rem;
-`;
-
-const Button = styled.button`
-  padding: 0.5rem 1rem;
-  background-color: navy;
-  border: none;
-  border-radius: 1rem;
-  color: white;
-  font-size: 2rem;
 `;
