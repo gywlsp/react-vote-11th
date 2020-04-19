@@ -1,36 +1,21 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
 import styled from "styled-components";
 
 import CandidateCard from "./card";
+import { useCandidates } from "../../hooks/Candidates";
 
 export default function CandidateList() {
-  const [candidates, setCandidates] = useState(null);
-
-  useEffect(() => {
-    getCandidates();
-  }, []);
-
-  const getCandidates = async () => {
-    const data = await axios
-      .get(process.env.API_HOST + "/candidates/")
-      .then((res) => {
-        console.log(res);
-        return res.data;
-      })
-      .catch((err) => console.log(err));
-    setCandidates(data);
-  };
-
-  return (
-    <Wrapper>
-      <Title>
-        <Emphasis>프론트엔드 인기쟁이</Emphasis>는 누구?
-      </Title>
-      <SubTitle>CEOS 프론트엔드 개발자 인기 순위 및 투표 창입니다.</SubTitle>
-      <ContentWrapper>
-        {candidates &&
-          candidates
+  const { data: candidates, loading, error, refetch } = useCandidates();
+  if (error) return <div>error!</div>;
+  if (candidates)
+    return (
+      <Wrapper>
+        <Title>
+          <Emphasis>프론트엔드 인기쟁이</Emphasis>는 누구?
+        </Title>
+        <SubTitle>CEOS 프론트엔드 개발자 인기 순위 및 투표 창입니다.</SubTitle>
+        <ContentWrapper>
+          {candidates
             .sort((a, b) => b.voteCount - a.voteCount)
             .map((candidate, index) => {
               return (
@@ -39,14 +24,15 @@ export default function CandidateList() {
                   {...{
                     rank: index + 1,
                     ...candidate,
-                    onComplete: getCandidates,
+                    onComplete: refetch,
                   }}
                 />
               );
             })}
-      </ContentWrapper>
-    </Wrapper>
-  );
+        </ContentWrapper>
+      </Wrapper>
+    );
+  return <></>;
 }
 
 const Wrapper = styled.div`
