@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 import LoginForm from "../src/components/login-form";
-import CandidateList from "../src/components/candidate/list";
+import Greeting from "../src/components/greeting";
 
-export default function Home() {
+export default function Login() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+  const [userName, setUserName] = useState("");
   return (
     <Wrapper>
       <Title>리액트 투-표</Title>
-      {!isLoggedIn && <LoginForm {...{ setIsLoggedIn }} />}
-      {isLoggedIn && <CandidateList />}
+      {!isLoggedIn && <LoginForm {...{ setIsLoggedIn, setUserName }} />}
+      {isLoggedIn && <Greeting {...{ userName }} />}
     </Wrapper>
   );
 }
