@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import styled from "styled-components";
 
 export default function LoginForm({ setIsLoggedIn }) {
   const [loginForm, setLoginForm] = useState({ email: "", password: "" });
@@ -79,3 +78,4 @@ export default function LoginForm({ setIsLoggedIn }) {
       </FormWrapper>
     </Wrapper>
   );
+}
