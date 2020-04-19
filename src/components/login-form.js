@@ -28,8 +28,28 @@ export default function LoginForm({ setIsLoggedIn }) {
         setIsLoggedIn(true);
       })
       .catch((err) => {
-        console.log(err);
-        alert("로그인 실패");
+        const { status } = err.response;
+        switch (status) {
+          case 404:
+            alert("이메일이 존재하지 않습니다!");
+            setLoginForm({
+              email: "",
+              password: "",
+            });
+            break;
+          case 422:
+            alert("비밀번호가 틀렸습니다!");
+            setLoginForm({
+              password: "",
+            });
+            break;
+          default:
+            alert("다시 시도해주세요!");
+            setLoginForm({
+              email: "",
+              password: "",
+            });
+        }
       });
   };
 
