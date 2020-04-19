@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
 
-export default function LoginForm({ setIsLoggedIn }) {
+export default function LoginForm({ setIsLoggedIn, setUserName }) {
   const [loginForm, setLoginForm] = useState({ email: "", password: "" });
 
   const handleLoginFormChange = (e) => {
@@ -25,6 +25,8 @@ export default function LoginForm({ setIsLoggedIn }) {
       .then((res) => {
         console.log(res);
         alert("로그인 성공!");
+        const { name } = res.data.user;
+        setUserName(name);
         setIsLoggedIn(true);
       })
       .catch((err) => {
